@@ -1,0 +1,42 @@
+<div class="columns is-centered mt-6">
+    <div class="column is-half">
+        <% @entries.each do |day, entries| %>
+            <h3 class="is-size-4 has-text-weight-bold mb-4 has-text-centered">Entries for <%= day %></h3>
+
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Distance</p>
+                    <p class="title"><%= entries.pluck(:distance).sum %></p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Time</p>
+                    <p class="title"><%= entries.pluck(:time).sum %></p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Number of Steps</p>
+                    <p class="title"><%= entries.pluck(:steps).sum %></p>
+                </div>
+            </div>
+        </nav>
+
+
+            <% entries.each do |entry| %>
+              <%= link_to entry_path(entry) do %>
+                <div class="card">
+                    <div class="card-content">
+                        <strong><%= entry.activity_type %></strong><br/>
+                        <%= entry.distance %> distance,
+                        <%= entry.time %> time,
+                        <%= entry.steps %> number of steps,
+                    </div>
+                </div>
+               <% end %>
+            <% end %>
+        <% end %>
+    </div>
+</div>

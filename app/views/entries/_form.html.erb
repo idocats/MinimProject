@@ -1,0 +1,41 @@
+<%= form_with(model: entry, local: true) do |form| %>
+  <% if entry.errors.any? %>
+    <div class="message is-danger">
+      <div class="message-header">
+        <p><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</p>
+      </div>
+
+      <div class="message-body">
+        <ul>
+        <% entry.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :activity_type, class: "label" %>
+    <%= form.text_field :activity_type, class: "input" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :distance, class: "label" %>
+    <%= form.number_field :distance, step: :any, class: "input" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :time, class: "label" %>
+    <%= form.number_field :time, step: :any, class: "input" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :steps, class: "label" %>
+    <%= form.number_field :steps, class: "input" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "button  is-success"%>
+  </div>
+<% end %>
