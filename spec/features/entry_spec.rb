@@ -1,31 +1,7 @@
 #require "entry"
 
 require 'rails_helper'
-#describe Entry do
-#    describe ".addrecord" do
-#        context "given 'Runtestuniquename' 10 10 10" do
-#            it "successfully adds record" do
-#                #before_count = Entry.count
-#                #Entry.create!(:activity_type => "Run", :distance => 10, :time => 10, :steps => 10)
-#                #expect(Entry.count).not_to eq(before_count)
-#                Entry.create!(:activity_type => "Runtestuniquename", :distance => 10, :time => 10, :steps => 10)
-#                expect(Entry.where(:name => "Runtestuniquename")).to have(1).record
-#            end
-#        end
-#    end
-#end
 
-#describe Entry do
-#    describe ".dontadd" do
-#        context "dont add entry to database" do
-#            context "with missing step field" do
-#                it "returns a successful insert" do
-#
-#                end
-#            end
-#        end
-#    end
-#end
 
 describe Entry do
     describe ".addingEntry" do
