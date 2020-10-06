@@ -29,6 +29,7 @@ class EntriesController < ApplicationController
 
     respond_to do |format|
       if @entry.save
+      #if true // Un commenting this line and commenting line 31 shows that when you run the tests, they fail. This proves the tests are working successfully.
         format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
         format.json { render :show, status: :created, location: @entry }
       else
